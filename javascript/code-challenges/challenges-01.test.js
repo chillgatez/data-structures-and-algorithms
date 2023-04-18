@@ -48,9 +48,15 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 
 const allUpperCase = (arr) => {
   // Solution code here...
+  let arrCap = [];
+  arr.forEach (value => {
+    arrCap.push(value.toUpperCase());
+  });
+
+  return arrCap;
 };
 
-/* ------------------------------------------------------------------------------------------------
+/* --------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
