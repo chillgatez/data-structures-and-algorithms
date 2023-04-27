@@ -87,7 +87,7 @@ Here is an example of the input:
 ];
 ------------------------------------------------------------------------------------------------ */
   // Solution code here...
-const sortByPrice = (arr) => arr.sort((a,b) => a.price - b.rice);
+const sortByPrice = (arr) => arr.sort((a,b) => a.price - b.price);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
