@@ -110,7 +110,7 @@ const salesData = (hours, data) => {
   // Solution code here...
   let arr = []
   hours.forEach((value, idx) => {
-    let obj = {sales:`${data[idx]} cookies`, time: value};
+    let obj = { sales: `${data[idx]} cookies`, time: value };
     arr.push(obj);
   })
   return arr;
@@ -139,8 +139,18 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
-
-  
+  const howManyTreats = (arr) => {
+    // Solution code here...
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i].store === 'Pet store') {
+        for (let j = 0; j < arr[i].items.length; j++) {
+          if (arr[i].items[j].name === 'Treats') {
+            return arr[i].items[j].quantity;
+          }
+        }
+      }
+    }
+  };
 };
 
 /* ------------------------------------------------------------------------------------------------
