@@ -137,8 +137,6 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  // Solution code here...
   const howManyTreats = (arr) => {
     // Solution code here...
     for (let i = 0; i < arr.length; i++) {
@@ -151,7 +149,7 @@ const howManyTreats = (arr) => {
       }
     }
   };
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
