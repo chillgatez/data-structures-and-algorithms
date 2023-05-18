@@ -35,7 +35,10 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 
 const count = (target, input) => {
   // Solution code here...
-  
+  return input.reduce((acc, arr) => {
+  return acc + arr.filter(number => number === target).length;
+  }, 0);
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -50,6 +53,14 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 
 const totalSum = (input) => {
   // Solution code here...
+  let sum = 0;
+  input.forEach((arr) => {
+    arr.forEach((value) => {
+      sum += value;
+    })
+
+  });
+  return sum
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -66,6 +77,13 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 
 const divisibleByFiveTwoToThePower = (input) => {
   // Solution code here...
+  return input.map((arr) => {
+    return arr.filter((value) => {
+      return typeof value === 'number' && value % 5 === 0;
+    }).map((value) => {
+      return Math.pow(2, value);
+    });
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -132,6 +150,12 @@ let starWarsData = [{
 
 let findMaleAndFemale = (data) => {
   // Solution code here...
+  return data.reduce((acc, value) => {
+  if (value.gender === 'male' || value.gender === 'female') {
+    acc.push(value.name); 
+  }
+  return acc;
+  }, []).join(' and ')
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -142,6 +166,15 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 
 let findShortest = (data) => {
   // Solution code here...
+
+    const shortestCharacter = data.filter((character) => character.height !== 'unknown').reduce((shortest, character) => {
+      const height = parseInt(character.height);
+      return (!shortest || height < shortest.height) ? { name: character.name, height: height } : shortest;
+    }, null);
+    
+    return shortestCharacter.name;
+  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
